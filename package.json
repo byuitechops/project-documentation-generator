@@ -1,0 +1,26 @@
+{
+  "name": "project-documentation-generator",
+  "version": "1.0.0",
+  "description": "cli to generate uniform project info to include on repositories",
+  "main": "main.js",
+  "dependencies": {
+    "inquirer": "^6.2.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/byuitechops/project-documentation-generator.git"
+  },
+  "keywords": [
+    "documentation"
+  ],
+  "author": "Aaron Shiffler, Ryan Gewondjan",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/byuitechops/project-documentation-generator/issues"
+  },
+  "homepage": "https://github.com/byuitechops/project-documentation-generator#readme"
+}
