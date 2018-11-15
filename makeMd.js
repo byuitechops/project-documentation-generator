@@ -47,21 +47,20 @@
 module.exports = function jsonToMd(jsonFile) {
     //Create the sizes object (size to definition key-value map).
     var sizesAndDefinitions = {
-        large: "2 months or more to complete",
-        medium: "less than 2 months to complete",
-        small: "less than 1 month to complete",
-        mini: "less than 1 week to complete"
+        large: '2 months or more to complete',
+        medium: 'less than 2 months to complete',
+        small: 'less than 1 month to complete',
+        mini: 'less than 1 week to complete'
     };
-
     //Parse the input json file into an object
-    var projectData = JSON.parse(jsonFile);
+    var projectData = jsonFile;
 
     //Generate and return the markdown string
     var markdown =
         `# ${makeTitleNice(projectData.title)}
 [Go to the Repository](${projectData.repositoryLink})
 
-${projectData.parentProject ? ("This is part of the [" + projectData.parentProject + "](" + projectData.parentProjectLink + ") project.\n\n") : ("")}**Description**
+${projectData.parentProject ? 'This is part of the [' + projectData.parentProject + '](' + projectData.parentProjectLink + ') project.\n\n' : ''}**Description**
 > ${projectData.description}    
 
 **Purpose**
@@ -77,7 +76,7 @@ ${projectData.parentProject ? ("This is part of the [" + projectData.parentProje
 This document created: ${projectData.timeThisDocCreated}.`;
 
     return markdown;
-}
+};
 
 /**************************************************
  * Function: makeTitleNice

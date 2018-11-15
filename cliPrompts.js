@@ -1,7 +1,8 @@
+const url = require('url');
 const baseUrl = 'https://github.com/byuitechops/';
 
 function messagePadEnd (string) {
-    let padding = 45;
+    let padding = 48;
     return string.padEnd(padding);
 }
 
@@ -16,7 +17,7 @@ var nameQuestion = {
     message: messagePadEnd('Enter the (exact) name of the repository'),
     suffix: ':',
     transformer: (input, answerHash) => { // add link attribute to answers hash
-        answerHash.link = (new URL(input, baseUrl)).href;
+        answerHash.repositoryLink = new url.URL(input, baseUrl).href;
         return input;
     },
     validate: noBlank,
@@ -36,7 +37,7 @@ var parentProjectNameQuestion = {
     message: messagePadEnd('Enter the (exact) name of the parent repository'),
     suffix: ':',
     transformer: (input, answerHash) => { // add parentProjectLink attribute to answers hash
-        answerHash.parentProjectLink = (new URL(input, baseUrl)).href;
+        answerHash.parentProjectLink = new url.URL(input, baseUrl).href;
         return input;
     },
     when: (answerHash) => answerHash.hasParentProject,
