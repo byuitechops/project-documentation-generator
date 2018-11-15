@@ -4,7 +4,7 @@
 function generateFiles() {
 
     //1. Call the prompt function and put the JSON object returned into a variable
-    var jsonFile = ""; //substitue "" with name of prompt function.
+    var jsonFile = ''; //substitue "" with name of prompt function.
     
     //2. Convert the JSON object to an MD string and save it to a variable
     var mdFile = jsonToMd(jsonFile);
