@@ -44,7 +44,7 @@
  * 
  * ************************************************/
 
-function jsonToMd(jsonFile) {
+module.exports = function jsonToMd(jsonFile) {
     //Create the sizes object (size to definition key-value map).
     var sizesAndDefinitions = {
         large: "2 months or more to complete",

@@ -1,6 +1,6 @@
 const fs = require('fs');
 
-function writeToFile(repositoryName, fileContents, fileExtension) {
+module.exports = function writeToFile(repositoryName, fileContents, fileExtension) {
 
     var outputDirectory = './output';
     var repositoryDirectory = './output/' + repositoryName;

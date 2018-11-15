@@ -1,3 +1,6 @@
+const writeToFile = require('./write-to-file.js');
+const jsonToMd = require('./make-md.js');
+
 function generateFiles() {
 
     const mdExt = 'md';
