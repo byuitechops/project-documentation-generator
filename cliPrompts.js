@@ -1,4 +1,5 @@
 const url = require('url');
+const thisFolderInfo = require('./thisFolderInfo.js');
 const baseUrl = 'https://github.com/byuitechops/';
 
 function messagePadEnd (string) {
@@ -21,6 +22,12 @@ var nameQuestion = {
         return input;
     },
     validate: noBlank,
+    default: (answerHash) => {
+        if (thisFolderInfo.isGitRepository()) {
+            return thisFolderInfo.currentDirName();
+        }
+        return;
+    }
 };
 
 var hasParentProjectQuestion = {
