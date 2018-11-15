@@ -1,11 +1,14 @@
+#!/usr/bin/env node
+// Above line is required for npm to make a symlink to this file to run in the command line
+// See https://docs.npmjs.com/files/package.json#bin for details
 const getInput = require('./getInput.js');
 const writeToFile = require('./writeToFile.js');
 const jsonToMd = require('./makeMd.js');
 
 async function generateFiles() {
 
-    const mdExt = 'md';
-    const jsonExt = 'json';
+    const mdExt = '.md';
+    const jsonExt = '.json';
 
     //1. Call the prompt function and put the JSON object returned into a variable
     var jsonFile = await getInput();
