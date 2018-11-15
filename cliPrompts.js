@@ -32,7 +32,7 @@ var hasParentProjectQuestion = {
 };
 
 var parentProjectNameQuestion = {
-    name: 'parentProjectName',
+    name: 'parentProject',
     type: 'input',
     message: messagePadEnd('Enter the (exact) name of the parent repository'),
     suffix: ':',
