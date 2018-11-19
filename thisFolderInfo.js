@@ -8,6 +8,10 @@ var thisFolderInfo = {
     
     currentDirName () {
         return path.parse(path.resolve('./')).name;
+    },
+
+    hasProjectInfoAlready () {
+        return fs.existsSync(path.resolve('./project-info.json'));
     }
 };
 
