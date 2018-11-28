@@ -2,34 +2,19 @@
 This is a node cli tool that collects information about a project from the user and then generates associated documents
 
 ## Getting Started:
-1. Download or Clone the Repository, then step into it:\
-```> git clone https://github.com/byuitechops/project-documentation-generator.git```\
-```> cd ./project-documentation-generator```
+1. Install the repository globally:\
+```> npm i -g git+https://github.com/byuitechops/project-documentation-generator.git```
 
-2. Download Dependencies:\
-```> npm install```
+2. Navigate to the repository you want to make documentation for:\
+```> cd ./path/to/thing```
 
-3. Link Global NPM Command:\
-```> npm link```
-
-4. Navigate to the repo you want to make documentation for:\
-```> cd C:\...\repoName```
-
-5. Run the linked command generated in step 3:\
+3. Run makeRepoDocs.cmd:\
 ```> makeRepoDocs.cmd```
 
 6. Commit and Push the new files to github\
 ```> git commit -a -m "Added project-documentation through generator"```
 
-If you wish to uninstall makeRepoDocs.cmd, navigate to the project-documentation-generator folder you cloned in step 1, then simply type:\
-```> npm unlink```\
-\
-Copy and Paste this into powershell to do steps 1-3 automatically:
-```
-git clone https://github.com/byuitechops/project-documentation-generator.git
-cd ./project-documentation-generator
-npm install
-npm link
-cd ..
-echo set-up completed
-```
+Please note that this program requires two things. 1. That you are running it within an existing git repository. 2. That the repository you are in has an existing `package.json` file. If you dont have an existing package.json, run `> npm init` and follow the instructions.
+
+If you wish to uninstall makeRepoDocs.cmd, simply type:\
+```> npm uninstall -g git+https://github.com/byuitechops/project-documentation-generator.git```\

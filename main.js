@@ -1,8 +1,6 @@
 #!/usr/bin/env node
 // Above line is required for npm to make a symlink to this file to run in the command line
 // See https://docs.npmjs.com/files/package.json#bin for details
-const fs = require('fs');
-const path = require('path');
 const thisFolderInfo = require('./thisFolderInfo.js');
 const getInput = require('./getInput.js');
 const writeToFile = require('./writeToFile.js');
@@ -29,7 +27,7 @@ async function generateFiles() {
     // 5. Print completion message:
     console.log('Process Completed.');
     console.log('Copy and paste this command to commit these changes');
-    console.log('git commit -a -m "Added/Updated documentation on package.json and project-info.md"');
+    console.log('git commit -a -m "Added/Updated project-documentation through generator"');
     return;
 }
 
