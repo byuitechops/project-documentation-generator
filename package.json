@@ -1,33 +1,42 @@
 {
-  "name": "project-documentation-generator",
-  "version": "1.0.0",
-  "description": "cli to generate uniform project info to include on repositories",
-  "main": "main.js",
-  "dependencies": {
-    "inquirer": "^6.2.0",
-    "moment": "^2.22.2"
-  },
-  "devDependencies": {},
-  "scripts": {
-    "link": "npm link",
-    "unlink": "npm unlink",
-    "start": "node main.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/byuitechops/project-documentation-generator.git"
-  },
-  "keywords": [
-    "documentation"
-  ],
-  "author": "Aaron Shiffler, Ryan Gewondjan",
-  "license": "MIT",
-  "bin": {
-    "makeRepoDocs": "./main.js"
-  },
-  "bugs": {
-    "url": "https://github.com/byuitechops/project-documentation-generator/issues"
-  },
-  "homepage": "https://github.com/byuitechops/project-documentation-generator#readme"
+    "name": "project-documentation-generator",
+    "version": "1.0.0",
+    "description": "This program makes .md and .json files that contain useful meta data to include in git repositories for future reference.",
+    "main": "main.js",
+    "dependencies": {
+        "inquirer": "^6.2.0",
+        "moment": "^2.22.2"
+    },
+    "devDependencies": {},
+    "scripts": {
+        "link": "npm link",
+        "unlink": "npm unlink",
+        "start": "node main.js",
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/byuitechops/project-documentation-generator.git"
+    },
+    "keywords": [
+        "documentation"
+    ],
+    "author": "Aaron Shiffler, Ryan Gewondjan",
+    "license": "MIT",
+    "bin": {
+        "makeRepoDocs": "./main.js"
+    },
+    "bugs": {
+        "url": "https://github.com/byuitechops/project-documentation-generator/issues"
+    },
+    "homepage": "https://github.com/byuitechops/project-documentation-generator#readme",
+    "byui": {
+        "title": "project-documentation-generator",
+        "repositoryLink": "https://github.com/byuitechops/project-documentation-generator",
+        "description": "This program makes .md and .json files that contain useful meta data to include in git repositories for future reference.",
+        "purpose": "This project helps team members retroactively generate this data in a uniform manner to quickly add and commit these files to existing projects they are working on.",
+        "stakeholders": "Our Team and Josh",
+        "size": "mini",
+        "timeThisDocCreated": "2018 November 27, 06:24 PM"
+    }
 }

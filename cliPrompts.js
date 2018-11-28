@@ -1,6 +1,12 @@
 const url = require('url');
 const thisFolderInfo = require('./thisFolderInfo.js');
 const baseUrl = 'https://github.com/byuitechops/';
+const defaultValues = thisFolderInfo.hasUpdatedPackageInfo();
+
+function setDefault (keyName) {
+    if (defaultValues) return defaultValues[keyName];
+    return;
+}
 
 function messagePadEnd (string) {
     let padding = 48;
@@ -12,6 +18,7 @@ function noBlank (input, answerHash) {
     else return 'this cannot be left blank!';
 }
 
+//
 var nameQuestion = {
     name: 'title',
     type: 'input',
@@ -37,7 +44,7 @@ var hasParentProjectQuestion = {
     suffix: ':',
     default: false,
 };
-
+// 
 var parentProjectNameQuestion = {
     name: 'parentProject',
     type: 'input',
@@ -50,7 +57,7 @@ var parentProjectNameQuestion = {
     when: (answerHash) => answerHash.hasParentProject,
     validate: noBlank,
 };
-
+// 
 var descriptionQuestion = {
     name: 'description',
     type: 'input',
@@ -58,7 +65,7 @@ var descriptionQuestion = {
     suffix: ':',
     validate: noBlank,
 };
-
+//
 var purposeQuestion = {
     name: 'purpose',
     type: 'input',
@@ -66,7 +73,7 @@ var purposeQuestion = {
     suffix: ':',
     validate: noBlank,
 };
-
+//
 var stakeholdersQuestion = {
     name: 'stakeholders',
     type: 'input',
@@ -81,12 +88,14 @@ var sizeValueToPromptAdapter = {
     medium: 'medium - less than 2 months to complete',
     large:  'large  - 2 months or more to complete',
 };
+
 var sizePromptToValueAdapter = {
     [sizeValueToPromptAdapter.mini]: 'mini',
     [sizeValueToPromptAdapter.small]: 'small',
     [sizeValueToPromptAdapter.medium]: 'medium',
     [sizeValueToPromptAdapter.large]: 'large',
 };
+// 
 var sizeQuestion = {
     name: 'size',
     type: 'list',
@@ -96,6 +105,12 @@ var sizeQuestion = {
     transformer: (input, answerHash) => sizePromptToValueAdapter[input],
     filter: (input) => sizePromptToValueAdapter[input],
 };
+
+parentProjectNameQuestion.default = setDefault(parentProjectNameQuestion.name);
+descriptionQuestion.default = setDefault(descriptionQuestion.name);
+purposeQuestion.default = setDefault(purposeQuestion.name);
+stakeholdersQuestion.default = setDefault(stakeholdersQuestion.name);
+sizeQuestion.default = setDefault(sizeQuestion.name);
 
 module.exports = [
     nameQuestion,

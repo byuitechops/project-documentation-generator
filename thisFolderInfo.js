@@ -10,8 +10,11 @@ var thisFolderInfo = {
         return path.parse(path.resolve('./')).name;
     },
 
-    hasProjectInfoAlready () {
-        return fs.existsSync(path.resolve('./project-info.json'));
+    hasUpdatedPackageInfo (packageJson) {
+        packageJson = fs.readFileSync(path.resolve('./package.json'));
+        packageJson = JSON.parse(packageJson); 
+        if (packageJson.byui === undefined) return false;
+        return packageJson.byui;
     }
 };
 

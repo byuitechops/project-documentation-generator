@@ -15,6 +15,6 @@ module.exports = async function () {
         'size',
     ];
     var inputs = specifyObjectKeys(await inquirer.prompt(cliPrompts), keysToKeep);
-    inputs.timeThisDocCreated = moment().format('YYYY MMMM DD, hh:mm A');
+    inputs.timeThisDocCreated = moment().format('YYYY MMMM DD, hh:mm A'); // "2018 November 27, 05:08 PM"
     return inputs;
 };
